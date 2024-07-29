@@ -1,22 +1,28 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, reload, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-
+import { doc, setDoc } from "firebase/firestore";
 import firebaseConfig from "./firebaseConfig";
-import { useState } from "react";
 import Home from "./Home";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 function googlesignIn() {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
-    .then((result) => {
+    .then(async (result) => {
       const user = result.user;
-      console.log("Logged in as " + user.displayName);
-      localStorage.setItem("Name", user.displayName);
-      localStorage.setItem("Email", user.email);
-      localStorage.setItem("UID", user.uid);
+      let name = user.displayName;
+      let email = user.email;
+      let image = user.photoURL;
+      localStorage.setItem("name", name);
+      console.log("Logged in as " + name);
+      await setDoc(doc(db, "users", name), {
+        name: name,
+        email: email,
+        image: image,
+      });
       localStorage.setItem("isLoggedIn", true);
       window.location.reload();
     })
@@ -26,18 +32,15 @@ function googlesignIn() {
 }
 
 function App() {
-  if (localStorage.getItem("isLoggedIn")){
-    return(
-      <Home/>
-    )
+  if (localStorage.getItem("isLoggedIn")) {
+    return <Home />;
   }
-    return (
-  <div>
-    <h1>Sign In</h1>
-    <button onClick={googlesignIn}>Sign in with Google</button>
-  </div>
-)
-  
+  return (
+    <div>
+      <h1>Sign In</h1>
+      <button onClick={googlesignIn}>Sign in with Google</button>
+    </div>
+  );
 }
 
 export default App;
