@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site" : "jahin-note-taker",
     "public": "build",
     "ignore": [
       "firebase.json",
