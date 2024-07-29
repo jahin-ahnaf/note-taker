@@ -1,0 +1,59 @@
+[debug] [2024-07-29T17:58:23.181Z] ----------------------------------------------------------------------
+[debug] [2024-07-29T17:58:23.182Z] Command:       /home/jahin/.nvm/versions/node/v20.16.0/bin/node /home/jahin/.nvm/versions/node/v20.16.0/bin/firebase deploy
+[debug] [2024-07-29T17:58:23.182Z] CLI Version:   13.14.2
+[debug] [2024-07-29T17:58:23.183Z] Platform:      linux
+[debug] [2024-07-29T17:58:23.183Z] Node Version:  v20.16.0
+[debug] [2024-07-29T17:58:23.183Z] Time:          Mon Jul 29 2024 23:58:23 GMT+0600 (Bangladesh Standard Time)
+[debug] [2024-07-29T17:58:23.183Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-29T17:58:23.230Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-29T17:58:23.230Z] > authorizing via signed-in user (jahinahnaf16@gmail.com)
+[debug] [2024-07-29T17:58:23.230Z] [iam] checking project note-app-14f28 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-07-29T17:58:23.231Z] > refreshing access token with scopes: []
+[debug] [2024-07-29T17:58:23.232Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-07-29T17:58:23.232Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-29T17:58:23.592Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-07-29T17:58:23.593Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-29T17:58:23.598Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/note-app-14f28:testIamPermissions [none]
+[debug] [2024-07-29T17:58:23.598Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/note-app-14f28:testIamPermissions x-goog-quota-user=projects/note-app-14f28
+[debug] [2024-07-29T17:58:23.598Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/note-app-14f28:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-07-29T17:58:25.282Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/note-app-14f28:testIamPermissions 200
+[debug] [2024-07-29T17:58:25.282Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/note-app-14f28:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-07-29T17:58:25.284Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/note-app-14f28 [none]
+[debug] [2024-07-29T17:58:25.999Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/note-app-14f28 200
+[debug] [2024-07-29T17:58:26.000Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/note-app-14f28 {"projectId":"note-app-14f28","projectNumber":"931476310026","displayName":"Note App","name":"projects/note-app-14f28","resources":{"hostingSite":"note-app-14f28"},"state":"ACTIVE","etag":"1_7a9cfa13-aa12-4584-9f0f-8c7c362f9826"}
+[info] 
+[info] === Deploying to 'note-app-14f28'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-07-29T17:58:26.004Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jahin-note-taker/versions [none]
+[debug] [2024-07-29T17:58:26.004Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jahin-note-taker/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-07-29T17:58:27.739Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jahin-note-taker/versions 200
+[debug] [2024-07-29T17:58:27.740Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jahin-note-taker/versions {"name":"projects/931476310026/sites/jahin-note-taker/versions/87f1c35e9b15ce9a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[jahin-note-taker]: beginning deploy... 
+[info] i  hosting[jahin-note-taker]: found 13 files in build 
+[debug] [2024-07-29T17:58:27.766Z] [hosting] uploading with 200 concurrency
+[debug] [2024-07-29T17:58:27.962Z] [hosting] hash cache [YnVpbGQ] stored for 13 files
+[debug] [2024-07-29T17:58:27.963Z] [hosting][hash queue][FINAL] {"max":192,"min":4,"avg":20,"active":0,"complete":13,"success":13,"errored":0,"retried":0,"total":13,"elapsed":195}
+[debug] [2024-07-29T17:58:27.963Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/931476310026/sites/jahin-note-taker/versions/87f1c35e9b15ce9a:populateFiles [none]
+[debug] [2024-07-29T17:58:27.963Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/931476310026/sites/jahin-note-taker/versions/87f1c35e9b15ce9a:populateFiles {"files":{"/static/css/main.31d6cfe0.css":"f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec","/robots.txt":"2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec","/manifest.json":"c12dd51ed2c8ac94acf3c25d1f0c541d667c90c8557ac43cb42d0a6df086bd7f","/logo192.png":"50bd60c6fefdd7de57fb652cf717e33c712106ffe0a32da5f75a12bf22cecbc0","/favicon.ico":"fc26b72d1f6d47474d8993a667b2af803ede41c9996d0f69e62ed6e415d7fed0","/index.html":"612a348d3dce010cd7da99dae25d3428bf300c229fc307c7f5e3ede8f21f06fd","/asset-manifest.json":"43d4e767ac1b84a1f1ee1eecc13a504afca5f56ee963577a075ce6ae8e54078e","/logo512.png":"9ab6cb941e493973baf9755bd3fc76988762e6b514d5bc365aeaccefa0de034f","/static/js/main.392ec2fa.js.LICENSE.txt":"2144e370cf192646b0d3c21cebc027ef30cbddf9b18672a3bcf7f5d923319590","/static/js/453.a2aaf0f5.chunk.js":"ddf64972cc300cf1dd1e8f46c06f7048b1eaf1907260d1328e8845c8699c37e5","/static/js/453.a2aaf0f5.chunk.js.map":"ae54dad3a137d2888005e4f110323413f5a8aca8b3932d95b443dcb9fbf93aea","/static/js/main.392ec2fa.js":"415bba9c2d8160deb60687e9691bbd7a2d8e3da82ee15f468916b47d7cae8ec6","/static/js/main.392ec2fa.js.map":"28aacc22241686025a3a215ba1e55b98f3bab08af18c7f523f6faf4540add67a"}}
+[debug] [2024-07-29T17:58:28.508Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/931476310026/sites/jahin-note-taker/versions/87f1c35e9b15ce9a:populateFiles 200
+[debug] [2024-07-29T17:58:28.508Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/931476310026/sites/jahin-note-taker/versions/87f1c35e9b15ce9a:populateFiles {"uploadRequiredHashes":["2144e370cf192646b0d3c21cebc027ef30cbddf9b18672a3bcf7f5d923319590","415bba9c2d8160deb60687e9691bbd7a2d8e3da82ee15f468916b47d7cae8ec6","612a348d3dce010cd7da99dae25d3428bf300c229fc307c7f5e3ede8f21f06fd","43d4e767ac1b84a1f1ee1eecc13a504afca5f56ee963577a075ce6ae8e54078e","28aacc22241686025a3a215ba1e55b98f3bab08af18c7f523f6faf4540add67a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files"}
+[debug] [2024-07-29T17:58:28.511Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/2144e370cf192646b0d3c21cebc027ef30cbddf9b18672a3bcf7f5d923319590 [none]
+[debug] [2024-07-29T17:58:28.511Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/2144e370cf192646b0d3c21cebc027ef30cbddf9b18672a3bcf7f5d923319590 [stream]
+[debug] [2024-07-29T17:58:28.514Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/415bba9c2d8160deb60687e9691bbd7a2d8e3da82ee15f468916b47d7cae8ec6 [none]
+[debug] [2024-07-29T17:58:28.514Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/415bba9c2d8160deb60687e9691bbd7a2d8e3da82ee15f468916b47d7cae8ec6 [stream]
+[debug] [2024-07-29T17:58:28.515Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/612a348d3dce010cd7da99dae25d3428bf300c229fc307c7f5e3ede8f21f06fd [none]
+[debug] [2024-07-29T17:58:28.516Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/612a348d3dce010cd7da99dae25d3428bf300c229fc307c7f5e3ede8f21f06fd [stream]
+[debug] [2024-07-29T17:58:28.517Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/43d4e767ac1b84a1f1ee1eecc13a504afca5f56ee963577a075ce6ae8e54078e [none]
+[debug] [2024-07-29T17:58:28.517Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/43d4e767ac1b84a1f1ee1eecc13a504afca5f56ee963577a075ce6ae8e54078e [stream]
+[debug] [2024-07-29T17:58:28.519Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/28aacc22241686025a3a215ba1e55b98f3bab08af18c7f523f6faf4540add67a [none]
+[debug] [2024-07-29T17:58:28.519Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/28aacc22241686025a3a215ba1e55b98f3bab08af18c7f523f6faf4540add67a [stream]
+[debug] [2024-07-29T17:58:28.520Z] [hosting][populate queue][FINAL] {"max":548,"min":548,"avg":548,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":558}
+[debug] [2024-07-29T17:58:28.520Z] [hosting] uploads queued: 5
+[debug] [2024-07-29T17:58:30.017Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/2144e370cf192646b0d3c21cebc027ef30cbddf9b18672a3bcf7f5d923319590 200
+[debug] [2024-07-29T17:58:30.017Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/2144e370cf192646b0d3c21cebc027ef30cbddf9b18672a3bcf7f5d923319590 [stream]
+[debug] [2024-07-29T17:58:30.028Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/43d4e767ac1b84a1f1ee1eecc13a504afca5f56ee963577a075ce6ae8e54078e 200
+[debug] [2024-07-29T17:58:30.028Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/43d4e767ac1b84a1f1ee1eecc13a504afca5f56ee963577a075ce6ae8e54078e [stream]
+[debug] [2024-07-29T17:58:30.235Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/612a348d3dce010cd7da99dae25d3428bf300c229fc307c7f5e3ede8f21f06fd 200
+[debug] [2024-07-29T17:58:30.236Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jahin-note-taker/versions/87f1c35e9b15ce9a/files/612a348d3dce010cd7da99dae25d3428bf300c229fc307c7f5e3ede8f21f06fd [stream]
