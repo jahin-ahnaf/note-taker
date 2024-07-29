@@ -8,7 +8,6 @@ import Home from "./Home";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-localStorage.setItem("name", "default")
 function googlesignIn() {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
