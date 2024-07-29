@@ -3,6 +3,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 import firebaseConfig from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
 
+localStorage.setItem("name", "default")
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
