@@ -10,12 +10,13 @@ const db = getFirestore(app);
 function logOut() {
   localStorage.removeItem("isLoggedIn");
   localStorage.setItem("name", "default");
+  localStorage.setItem("email", "default");
   window.location.reload();
 }
 
 function Home() {
   const [userData, setUserData] = useState(null);
-  const documentName = localStorage.getItem("name");
+  const documentName = localStorage.getItem("email");
 
   useEffect(() => {
     const fetchData = async () => {

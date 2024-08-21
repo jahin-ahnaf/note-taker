@@ -18,8 +18,9 @@ function googlesignIn() {
       let email = user.email;
       let image = user.photoURL;
       localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
       console.log("Logged in as " + name);
-      await setDoc(doc(db, "users", name), {
+      await setDoc(doc(db, "users", email), {
         name: name,
         email: email,
         image: image,
