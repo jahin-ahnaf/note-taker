@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { collection, doc, setDoc ,getDoc, getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "./firebaseConfig";
 import styles from "./index.css";
@@ -23,8 +23,13 @@ function Home() {
       if (documentName) {
         const docRef = doc(db, "users", documentName);
         const docSnap = await getDoc(docRef);
+        
         if (docSnap.exists()) {
           setUserData(docSnap.data());
+            const notesRef = collection(db, "users", documentName, "notes");
+            await setDoc(doc(notesRef, "notes"), {
+              notes: [],
+            });
         } else {
           console.log("No such document");
         }
@@ -39,7 +44,9 @@ function Home() {
         {userData ? (
           <>
             <div className="flex items-center shadow-lg p-5">
-              <span class="material-symbols-rounded text-4xl mr-3">account_circle</span>
+              <div className="rounded-full h-12 w-12 mr-5">
+                <img className="rounded-full" src={userData.image}></img>
+              </div>
               <div className="block">
                 <p>{userData.name}</p>
                 <p className="text-sm text-zinc-500">{userData.email}</p>
